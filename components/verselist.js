@@ -13,44 +13,45 @@ import {
   Image,
   ActivityIndicator
   } from "react-native";
-import { useFocusEffect, useNavigation } from "@react-navigation/native";
-import { useState,useEffect } from "react";
+import { useNavigation,useRoute } from "@react-navigation/native";
 import { LinearGradient } from "expo-linear-gradient";
 import chplist from "../chplist.json"
-import {RFValue} from "react-native-responsive-fontsize";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-const {width,height} = Dimensions.get('window')``
+import {RFValue,RFPercentage} from "react-native-responsive-fontsize";
+const {width,height} = Dimensions.get('window')
 
-const Verselist1=({data})=>{
-  const {navigate} = useNavigation()
-  var theme = data.theme
-  console.log(theme)
-  var chpid = data.chpid
-  var chpid1 = chpid < 10 ? "0"+chpid : chpid
-  var main = chplist[0][chpid]
-  var chpogname = data.chpogname
+const Verselist1=()=>{
+  const {params} = useRoute()
+  const navigation = useNavigation()
+  const theme = params.theme
+  const chpid = params.chid
+  const chpid1 = chpid < 10 ? "0"+chpid : chpid
+  const main = chplist[0][chpid]
+  const chpogname = params.chogname
 
   const renderItem =(item)=>{
-    if(item.item.id > 0){return(
+    if(item.item.id > 0){
+      return(
       <TouchableOpacity style={styles.card} 
-      onPress={()=>{navigate("Hverse",{cid:item.item.id ,chpid : item.item.chp , chpname : item.item.name,theme:theme})}}>
+      onPress={()=>{navigation.navigate("Hverse",{cid:item.item.id ,chpid : item.item.chp , chpname : item.item.name,theme:theme})}}>
         <LinearGradient
           start={[0,0]}
           end={[1,1]}
           style={styles.card1}
-          colors={theme=="Dark"?['#E6BE8A','#FFCC00','white','#FFCC00','#E6BE8A']:['#1d0093','#002eff','#00b9ff','#002eff','#1d0093']}>
+          colors={theme=="Dark"?['#E6BE8A','#FFCC00','white','#FFCC00','#E6BE8A']:['#996D08','#B8860B','#DAB060','#B8860B','#996D08']}>
           <LinearGradient
             colors={theme == "Dark"?['#2a2a2a','#3d3d3d']:['#f6f6f6','#c2c2c2']} 
-            style={[styles.card2,{height:item.item.data.shlok.length>175?"96.5%":"92.5%"}]}>
+            style={[styles.card2,{height:item.item.data.shlok.length>175?"95.5%":"90.5%"}]}>
           <View style={styles.sub}>
-            <Text style={[styles.subText,{color:theme=="Dark"?"white":"black"}]}>{item.item.data.verno}</Text>
-            <Text style={[styles.subText,{color:theme=="Dark"?"white":"black",height:"100%"}]}>{item.item.data.shlok}</Text>
+            <Text style={[styles.subText,{color:theme=="Dark"?"white":"black",fontSize:RFPercentage(1.95)}]}>{item.item.data.verno}</Text>
+            <Text style={[styles.subText,{color:theme=="Dark"?"white":"black",height:"100%",fontSize:RFPercentage(1.95)}]}>{item.item.data.shlok}</Text>
           </View>
           </LinearGradient>
         </LinearGradient>
       </TouchableOpacity>
-    )}
+      )
+    }
   }
+
   if(theme!=null){
     return(
       <View style={{backgroundColor:theme=="Dark"?"black":"white",flex:1}}>
@@ -88,13 +89,9 @@ const Verselist1=({data})=>{
 }
 
 export default class Verselist extends React.Component{
-
   render(){
-    var chpid = this.props.route.params.chid
-    var chpogname = this.props.route.params.chogname
-    var theme = this.props.route.params.theme
     return(
-      <Verselist1 data={{chpid,chpogname,theme}} />
+      <Verselist1/>
     )
   }
 }
@@ -139,7 +136,7 @@ const styles = StyleSheet.create({
   },
   card2:{
     backgroundColor: "rgba(73, 73, 73,0.4)",
-    width:"97%",
+    width:"96.5%",
     alignSelf:"center",
     borderRadius:RFValue(15),
     textAlign : "center",
@@ -151,21 +148,4 @@ const styles = StyleSheet.create({
     marginTop:RFValue(10),
     marginBottom:RFValue(25)
   },
-  main:{
-    margin:RFValue(10),
-    textAlign:"center",
-    alignItems:"center",
-    width:"95%"
-  },
-  mainHeader:{
-    height:RFValue(65),
-    backgroundColor:"#424242",
-    alignItems:"center",
-    flexDirection:"row",
-    borderColor:"grey",
-    borderTopColor:"grey",
-    borderWidth:RFValue(1),
-    width:width,
-    justifyContent:"space-evenly"
-  }
 })

@@ -16,7 +16,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
-import {RFValue} from "react-native-responsive-fontsize";
+import {RFValue,RFPercentage} from "react-native-responsive-fontsize";
 import { useFocusEffect } from "@react-navigation/native";
 const {width,height} = Dimensions.get('window')
 
@@ -51,13 +51,13 @@ const BookMark1=({changeTabBar})=>{
           start={[0,0]}
           end={[1,1]}
           style={styles.card1}
-          colors={theme==="Dark"?['#E6BE8A','#FFCC00','white','#FFCC00','#E6BE8A']:['#1d0093','#002eff','#00b9ff','#002eff','#1d0093']}>
+          colors={theme==="Dark"?['#E6BE8A','#FFCC00','white','#FFCC00','#E6BE8A']:['#7B5506','#996D08','#DAB060','#996D08','#7B5506']}>
           <LinearGradient
             colors={theme==="Dark"?['#2a2a2a','#3d3d3d']:['#f6f6f6','#c2c2c2']} 
-            style={[styles.card2,{height:item.item.data.shlok.length>175?"96.5%":"92.5%"}]}>
+            style={[styles.card2,{height:item.item.data.shlok.length>175?"95.5%":"90.5%"}]}>
           <View style={styles.sub}>
-            <Text style={[styles.subText,{color:theme=="Dark"?"white":'black'}]}>Chapter {item.item.chp} Verse {item.item.data.verno}</Text>
-            <Text style={[styles.subText,{color:theme=="Dark"?"white":'black'}]}>{item.item.data.shlok}</Text>
+            <Text style={[styles.subText,{color:theme=="Dark"?"white":'black',fontSize:RFPercentage(1.95)}]}>Chapter {item.item.chp} Verse {item.item.data.verno}</Text>
+            <Text style={[styles.subText,{color:theme=="Dark"?"white":'black',fontSize:RFPercentage(1.95)}]}>{item.item.data.shlok}</Text>
           </View>
           </LinearGradient>
         </LinearGradient>
@@ -141,7 +141,6 @@ const styles = StyleSheet.create({
     height:"auto",width:"100%",backgroundColor:"white"
   },
   card:{
-    borderWidth:RFValue(1),
     backgroundColor: "rgba(73, 73, 73 ,0.5)",
     width:"95%",
     justifyContent:"center",
@@ -163,8 +162,7 @@ const styles = StyleSheet.create({
   },
   card2:{
     backgroundColor: "rgba(73, 73, 73,0.4)",
-    width:"97%",
-    height:"91%",
+    width:"96.5%",
     alignSelf:"center",
     borderRadius:RFValue(15),
     textAlign : "center",
@@ -174,7 +172,7 @@ const styles = StyleSheet.create({
     flexDirection:"column",
     width:"100%",
     marginTop:RFValue(10),
-    marginBottom:RFValue(15)
+    marginBottom:RFValue(25)
   },
   main:{
     margin:RFValue(10),

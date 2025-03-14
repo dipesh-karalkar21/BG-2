@@ -10,6 +10,7 @@ import {
     FlatList,
     Image,
     TouchableOpacity,
+    ScrollView
 } from "react-native";
 import bhaktiList from "../bhakti.json"
 import { useFocusEffect,useRoute } from "@react-navigation/native";
@@ -18,7 +19,6 @@ const {width,height} = Dimensions.get('window')
 import { RFValue } from "react-native-responsive-fontsize";
 import { useNavigation } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { ScrollView } from "react-native-gesture-handler";
 
 const Bhakti1=()=>{
     const {navigate} = useNavigation()
@@ -78,7 +78,7 @@ const Bhakti1=()=>{
             start={[0,0]}
             end={[1,1]}
             style={styles.card1}
-            colors={theme=="Dark"?['#E6BE8A','#FFCC00','white','#FFCC00','#E6BE8A']:['#1d0093','#002eff','#00b9ff','#002eff','#1d0093']}>
+            colors={theme=="Dark"?['#E6BE8A','#FFCC00','white','#FFCC00','#E6BE8A']:['#7B5506','#996D08','#DAB060','#996D08','#7B5506']}>
             <LinearGradient
                 colors={theme == "Dark"?['#2a2a2a','#3d3d3d']:['#f6f6f6','#c2c2c2']} 
                 style={[styles.card2]}>
@@ -297,7 +297,7 @@ export const Bhakti2=()=>{
             start={[0,0]}
             end={[1,1]}
             style={styles.card1}
-            colors={theme=="Dark"?['#E6BE8A','#FFCC00','white','#FFCC00','#E6BE8A']:['#1d0093','#002eff','#00b9ff','#002eff','#1d0093']}>
+            colors={theme=="Dark"?['#E6BE8A','#FFCC00','white','#FFCC00','#E6BE8A']:['#7B5506','#996D08','#DAB060','#996D08','#7B5506']}>
             <LinearGradient
                 colors={theme == "Dark"?['#2a2a2a','#3d3d3d']:['#f6f6f6','#c2c2c2']} 
                 style={[styles.card2]}>
@@ -369,13 +369,13 @@ export const Bhakti3=()=>{
                     start={[0,0.5]}
                     end={[1,0.5]}
                     style={{height:RFValue(2),width:0.75*width,alignSelf:"center",margin:RFValue(10),borderRadius:RFValue(100)}} 
-                    colors={theme==="Dark"?['#E6BE8A','#FFCC00','white','#FFCC00','#E6BE8A']:['#1d0093','#002eff','#00b9ff','#002eff','#1d0093']} ></LinearGradient>
+                    colors={theme==="Dark"?['#E6BE8A','#FFCC00','white','#FFCC00','#E6BE8A']:['#7B5506','#996D08','#DAB060','#996D08','#7B5506']} ></LinearGradient>
                 <Text style={[styles.subText1,{color:theme=="Dark"?"white":"black"}]} >{item.item.title}</Text>
                 <LinearGradient 
                     start={[0,0.5]}
                     end={[1,0.5]}
                     style={{height:RFValue(2),width:0.75*width,alignSelf:"center",margin:RFValue(10),borderRadius:RFValue(100),marginBottom:RFValue(20)}} 
-                    colors={theme==="Dark"?['#E6BE8A','#FFCC00','white','#FFCC00','#E6BE8A']:['#1d0093','#002eff','#00b9ff','#002eff','#1d0093']} ></LinearGradient>
+                    colors={theme==="Dark"?['#E6BE8A','#FFCC00','white','#FFCC00','#E6BE8A']:['#7B5506','#996D08','#DAB060','#996D08','#7B5506']} ></LinearGradient>
                 <Text style={[styles.subText1,{color:theme=="Dark"?"white":"black"}]} >{item.item.content+"\n".repeat(item.item.content.length>600?(((item.item.content.length)/100)-3):2)}</Text>
             </ScrollView>
         )

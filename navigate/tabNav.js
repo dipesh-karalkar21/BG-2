@@ -30,7 +30,7 @@ export default function TabNav(){
           screenOptions={({route})=>({ 
             tabBarIcon:({focused,color,size}) => {
               let iconName;
-              if(route.name === 'Home'){ 
+              if(route.name === 'Main'){ 
                 iconName = focused?'home':'home-outline'; 
               }
               else if(route.name === 'Bookmarks'){ 
@@ -59,7 +59,7 @@ export default function TabNav(){
         
           })
           } >
-          <Tab.Screen name = "Home" component = {Chplist} options={{headerShown: false}}/>
+          <Tab.Screen name = "Main" component = {Chplist} options={{headerShown: false}}/>
           <Tab.Screen name = "Bookmarks" component = {Bookmark} options={{headerShown: false}}/>
           <Tab.Screen name = "Bhakti" component={Bhakti} options={{headerShown:false}} />
           <Tab.Screen name = "Settings" options={{headerShown:false}}>

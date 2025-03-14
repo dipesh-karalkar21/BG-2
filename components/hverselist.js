@@ -99,7 +99,7 @@ const Hverse1=(data)=>{
               start={[0,0.5]}
               end={[1,0.5]}
               style={{height:RFValue(4),width:RFValue(200),alignSelf:"center",margin:RFValue(10),borderRadius:RFValue(100)}} 
-              colors={theme==="Dark"?['#E6BE8A','#FFCC00','white','#FFCC00','#E6BE8A']:['#1d0093','#002eff','#00b9ff','#002eff','#1d0093']} ></LinearGradient>
+              colors={theme==="Dark"?['#E6BE8A','#FFCC00','white','#FFCC00','#E6BE8A']:['#7B5506','#996D08','#DAB060','#996D08','#7B5506']} ></LinearGradient>
       <Text style={[styles.subText,{color:theme=="Dark"?"white":"black"}]}>{item.item.data.shlok+"\n"}</Text>
       <Text> </Text>
       <Text style={[styles.subText,{fontSize:RFValue(17),color:theme=="Dark"?"white":"black"}]}>
@@ -109,7 +109,7 @@ const Hverse1=(data)=>{
               start={[0,0.5]}
               end={[1,0.5]}
               style={{height:RFValue(4),width:RFValue(150),alignSelf:"center",margin:RFValue(10),borderRadius:RFValue(100)}} 
-              colors={theme==="Dark"?['#E6BE8A','#FFCC00','white','#FFCC00','#E6BE8A']:['#1d0093','#002eff','#00b9ff','#002eff','#1d0093']} ></LinearGradient>
+              colors={theme==="Dark"?['#E6BE8A','#FFCC00','white','#FFCC00','#E6BE8A']:['#7B5506','#996D08','#DAB060','#996D08','#7B5506']} ></LinearGradient>
       <Text style={[styles.subText,{color:theme=="Dark"?"white":"black"}]}>{item.item.data.translit}</Text>
       <Text> </Text>
       <Text style={[styles.subText,{fontSize:RFValue(17),color:theme=="Dark"?"white":"black"}]}>
@@ -119,7 +119,7 @@ const Hverse1=(data)=>{
               start={[0,0.5]}
               end={[1,0.5]}
               style={{height:RFValue(4),width:RFValue(150),alignSelf:"center",margin:RFValue(10),borderRadius:RFValue(100)}} 
-              colors={theme==="Dark"?['#E6BE8A','#FFCC00','white','#FFCC00','#E6BE8A']:['#1d0093','#002eff','#00b9ff','#002eff','#1d0093']} ></LinearGradient>
+              colors={theme==="Dark"?['#E6BE8A','#FFCC00','white','#FFCC00','#E6BE8A']:['#7B5506','#996D08','#DAB060','#996D08','#7B5506']} ></LinearGradient>
       <Text style={[styles.subText,{color:theme=="Dark"?"white":"black"}]}>{item.item.data.translate}</Text>
       <Text> </Text>
       <Text style={[styles.subText,{fontSize:RFValue(17),color:theme=="Dark"?"white":"black"}]}>
@@ -129,7 +129,7 @@ const Hverse1=(data)=>{
               start={[0,0.5]}
               end={[1,0.5]}
               style={{height:RFValue(4),width:RFValue(100),alignSelf:"center",margin:RFValue(10),borderRadius:RFValue(100)}} 
-              colors={theme==="Dark"?['#E6BE8A','#FFCC00','white','#FFCC00','#E6BE8A']:['#1d0093','#002eff','#00b9ff','#002eff','#1d0093']} ></LinearGradient>
+              colors={theme==="Dark"?['#E6BE8A','#FFCC00','white','#FFCC00','#E6BE8A']:['#7B5506','#996D08','#DAB060','#996D08','#7B5506']} ></LinearGradient>
       <Text style={[styles.subText,{color:theme=="Dark"?"white":"black"}]}>{item.item.data.purport}</Text>
       <Text> </Text>
       <Text> </Text>

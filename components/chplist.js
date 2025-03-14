@@ -15,8 +15,7 @@ import {
 import Chp from "../chplist.json"
 import CHPDATA from "../chp.json";
 import { LinearGradient } from "expo-linear-gradient";
-import { CommonActions, NavigationEvents } from '@react-navigation/native';
-import {RFValue} from "react-native-responsive-fontsize";
+import {RFValue,RFPercentage} from "react-native-responsive-fontsize";
 import { useEffect,useState,useCallback } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { useFocusEffect } from "@react-navigation/native";
@@ -79,10 +78,10 @@ const Chplist1=({changeTabBar})=>{
         start={[0,0]}
         end={[1,1]}
         style={styles.listCard1} 
-        colors={theme==="Dark"?['#E6BE8A','#FFCC00','white','#FFCC00','#E6BE8A']:['#1d0093','#002eff','#00b9ff','#002eff','#1d0093']} >
+        colors={theme==="Dark"?['#E6BE8A','#FFCC00','white','#FFCC00','#E6BE8A']:['#816317','#9F8000','#D4AF37','#EECC40','#D4AF37','#9F8000','#816317']} >
         <LinearGradient colors={theme==="Dark"?['#2a2a2a','#3d3d3d']:['#f6f6f6','#c2c2c2']} style={styles.listCard2} >
         <Image source={image[item.item.id]} style={{position:"absolute",height:"100%",width:"100%",borderRadius:RFValue(15)}} resizeMode="stretch" blurRadius={10} />
-          <View style={[styles.listSub,{backgroundColor:theme=="Dark"?"rgba(0, 0, 0 , 0.4)":"rgba(225,225,225,0.6)",borderRadius:RFValue(15)}]}>
+          <View style={[styles.listSub,{backgroundColor:theme=="Dark"?"rgba(0, 0, 0 , 0.4)":"rgba(225,225,225,0.6)",borderRadius:RFValue(15),borderColor:"white",borderWidth:0.2}]}>
             <Image source={image[item.item.id]} style={{height:"100%",width:"47.5%",borderRadius:RFValue(15)}} resizeMode="stretch" />
             <View style={[styles.innerView,{borderRadius:RFValue(15),marginTop:RFValue(10)}]}>
               <Text style={[styles.subText,{color:theme == "Dark"?"white":"black"}]}>{id}. {item.item["name-trans"]}</Text>
@@ -112,15 +111,15 @@ const Chplist1=({changeTabBar})=>{
                   start={[0,0]}
                   end={[1,1]}
                   style={styles.card1}
-                  colors={theme==="Dark"?['#E6BE8A','#FFCC00','white','#FFCC00','#E6BE8A']:['#1d0093','#002eff','#00b9ff','#002eff','#1d0093']}
+                  colors={theme==="Dark"?['#E6BE8A','#FFCC00','white','#FFCC00','#E6BE8A']:['#7B5506','#996D08','#DAB060','#996D08','#7B5506']}
                 >
                   <LinearGradient
                     colors={theme==="Dark"?['#2a2a2a','#3d3d3d']:['#f6f6f6','#c2c2c2']} 
-                    style={[styles.card2,{height:info.data.shlok.length>175?"95.5%":"92.5%"}]}
+                    style={[styles.card2,{height:info.data.shlok.length>175?"95.5%":"90.5%"}]}
                   >
                     <View style={[styles.sub,{justifyContent:"center",alignItems:"center",color:theme == "Dark"?"white":"black"}]}>
-                      <Text style={[styles.subText1,{textAlign:"center",color:theme == "Dark"?"white":"black",fontSize:RFValue(13)}]} >Chapter {info.chp} Verse {info.data.verno}</Text>
-                      <Text style={[styles.subText1,{textAlign:"center",color:theme == "Dark"?"white":"black",height:"100%",fontSize:RFValue(13)}]} >{info.data.shlok+"\n".repeat(info.data.shlok.length>175?2:1)}{console.log(info.data.shlok.length)}</Text>
+                      <Text style={[styles.subText1,{textAlign:"center",color:theme == "Dark"?"white":"black",fontSize:RFPercentage(2)}]} >Chapter {info.chp} Verse {info.data.verno}</Text>
+                      <Text style={[styles.subText1,{textAlign:"center",color:theme == "Dark"?"white":"black",height:"100%",fontSize:RFPercentage(1.95)}]} >{info.data.shlok+"\n".repeat(info.data.shlok.length>175?0:1)}{console.log(info.data.shlok.length)}</Text>
                     </View>
                   </LinearGradient>
                 </LinearGradient>
@@ -148,7 +147,6 @@ const Chplist1=({changeTabBar})=>{
       </View>
     )
   }
-
 }
 
 
@@ -226,8 +224,7 @@ const styles = StyleSheet.create({
   },
   card2:{
     backgroundColor: "rgba(73, 73, 73,0.4)",
-    width:"97.25%",
-    height:"95.5%",
+    width:"96.5%",
     alignSelf:"center",
     borderRadius:RFValue(15),
     textAlign : "center",
